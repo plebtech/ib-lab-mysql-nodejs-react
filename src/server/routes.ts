@@ -18,4 +18,14 @@ router.get('/api/blogs', async (req, res) => {
     }
 });
 
+router.get('/api/blogs/:id', async (req, res) => {
+    try {
+        let blog = await DB.Blogs.one(req.params.id);
+        res.json(blog);
+    } catch(e) {
+        console.log(e);
+        res.sendStatus(500);
+    }
+});
+
 export default router;
