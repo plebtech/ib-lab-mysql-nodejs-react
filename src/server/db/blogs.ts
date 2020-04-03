@@ -22,6 +22,7 @@ export const one = async (id: number) => {
             }
         });
     });
+}
 
 export default {
     all,
